@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>NuzhulPay</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(135deg, #e0f7fa, #b2ebf2);
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .payment-container {
+      background: white;
+      padding: 30px 25px;
+      border-radius: 16px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+      text-align: center;
+      max-width: 380px;
+      width: 100%;
+      animation: fadeIn 1s ease-out;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    h2 {
+      margin-bottom: 10px;
+      color: #00695c;
+    }
+
+    p {
+      color: #555;
+      font-size: 15px;
+    }
+
+    .amount {
+      font-size: 24px;
+      font-weight: bold;
+      color: #00796b;
+      margin: 15px 0;
+    }
+
+    .qris-img {
+      width: 220px;
+      height: 220px;
+      border-radius: 12px;
+      border: 2px solid #ccc;
+      object-fit: cover;
+      margin: 20px 0;
+      animation: bounceQR 1s ease;
+    }
+
+    @keyframes bounceQR {
+      0% { transform: scale(0.9); opacity: 0; }
+      60% { transform: scale(1.05); opacity: 1; }
+      100% { transform: scale(1); }
+    }
+
+    .btn {
+      display: inline-block;
+      background-color: #0288d1;
+      color: white;
+      padding: 12px 20px;
+      margin: 10px 5px;
+      border: none;
+      border-radius: 8px;
+      font-size: 14px;
+      cursor: pointer;
+      transition: background-color 0.3s ease, transform 0.2s ease;
+      text-decoration: none;
+    }
+
+    .btn:hover {
+      background-color: #0277bd;
+      transform: scale(1.05);
+    }
+
+    .btn-wa {
+      background-color: #25d366;
+    }
+
+    .btn-wa:hover {
+      background-color: #1ebe5d;
+    }
+
+    .instructions {
+      margin-top: 20px;
+      font-size: 13px;
+      color: #777;
+    }
+
+    @media (max-width: 480px) {
+      .payment-container {
+        padding: 20px 15px;
+      }
+
+      .qris-img {
+        width: 180px;
+        height: 180px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="payment-container">
+    <h2>Bayar dengan QRIS</h2>
+    <p>Silakan scan QR di bawah ini menggunakan aplikasi e-wallet Anda.</p>
+
+    <img src="inidia.jpg" alt="Kode QRIS untuk Pembayaran Rp25.000" class="qris-img" />
+
+    <div>
+      <button class="btn" onclick="location.reload()">QR Tidak Muncul? Refresh</button>
+      <a 
+        class="btn btn-wa"
+        href="https://wa.me/6281242426078?text=Halo,%20saya%20sudah%20melakukan%20pembayaran%20Rp25.000%20via%20QRIS.%20Berikut%20bukti%20transaksi%20saya%3A%20"
+        target="_blank"
+        onclick="return confirm('Apakah Anda sudah melakukan pembayaran dan siap mengirim bukti?')"
+      >
+        Kirim Bukti ke WhatsApp
+      </a>
+    </div>
+
+    <div class="instructions">
+      Setelah melakukan pembayaran, klik tombol WhatsApp di atas untuk mengirim bukti transaksi.<br>
+      <strong>Tanpa bukti, pembayaran tidak akan diproses.</strong>
+    </div>
+  </div>
+
+</body>
+</html>
